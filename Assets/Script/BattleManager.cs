@@ -9,7 +9,8 @@ public class BattleManager : MonoBehaviour
     public GameObject enemypos;
     public GameObject playerpos;
     private bool enemyTurn;
-
+    
+    public GameObject nextTurn;
     public GameObject turnoffenemyturn;
     private bool attackinstantiated;
     
@@ -17,11 +18,18 @@ public class BattleManager : MonoBehaviour
     {
         GameObject B = Instantiate(attackprefab, enemypos.transform.position, Quaternion.identity);
         B.transform.parent = transform;
-        enemyTurn = true;
+        nextTurn.SetActive(true);
+        turnoffenemyturn.SetActive(false);
     }
 
     private void Update()
     {
+        /*if ()
+        {
+            enemyTurn = true;
+            nextTurn.SetActive(false);
+            turnoffenemyturn.SetActive(false);
+        }*/
         if (enemyTurn == true)
         {
             if (!attackinstantiated)

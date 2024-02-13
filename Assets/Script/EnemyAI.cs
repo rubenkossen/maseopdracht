@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -67,15 +69,12 @@ public class EnemyAI : MonoBehaviour
     {
         float distanceToTarget = Vector3.Distance(transform.position, closestTarget.position);
 
-        if (Vector3.Distance(transform.position, closestTarget.position) < offset)
-        {
-            stop();
-        }
-        else
-        {
+        
+        
+        
             float effectivespeed = Mathf.Min(speed, distanceToTarget / 2f);
             transform.position = Vector3.MoveTowards(transform.position, closestTarget.position, effectivespeed * Time.deltaTime);
-        }
+        
 
         Vector3 directionToTarget = (target.position - transform.position).normalized;
         Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
@@ -83,10 +82,15 @@ public class EnemyAI : MonoBehaviour
 
     }
 
-    void stop()
+    private void OnCollisionEnter(Collision other)
     {
-        
+        if(other.collider.CompareTag("Player"))
+        {
+            Debug.Log(" dave");
+            SceneManager.LoadScene("BattleScene");
+        }
     }
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
