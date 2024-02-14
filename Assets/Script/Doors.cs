@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Doors : MonoBehaviour
 {
-    public Animator m_animator;
-    public List<GameObject> Gates;
+    [SerializeField] private Animator m_animator;
+    [SerializeField] private List<GameObject> Gates;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Player")
@@ -23,7 +23,7 @@ public class Doors : MonoBehaviour
     IEnumerator animationcoroutine()
     {
         yield return new WaitForSeconds(1);
-        
+        ///make animation work with this
         m_animator.SetTrigger("DoorOpen");
     }
 }

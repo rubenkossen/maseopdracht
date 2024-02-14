@@ -5,24 +5,19 @@ using UnityEngine;
 using TMPro;
 public class EnemyStats : MonoBehaviour
 {
-    public int EnemyHp;
-    public int EnemyStrength;
-    public int EnemyDefence;
-    public int EnemySpeed;
-    public TMP_Text HPText;
+    [SerializeField] private int EnemyHp;
+    
     void Update()
     {
-        HPText.text = EnemyHp.ToString();
+        if (EnemyHp <= 0)
+        {
+            Die(); 
+        }
     }
 
     public void TakeDamage(int damage)
     {
         EnemyHp -= damage;
-        
-        if (EnemyHp <= 0)
-        {
-            Die(); 
-        }
     }
 
     void Die()

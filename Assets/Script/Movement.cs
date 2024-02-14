@@ -4,22 +4,12 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float speed = 10;
-    public CharacterController controller;
-    public float gravity = -20;
-
-    public Transform groundcheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
-
+    [SerializeField] private float speed = 10;
+    [SerializeField] private CharacterController controller;
+    [SerializeField] private float gravity = -20;
+    
     Vector3 velocity;
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         float x = Input.GetAxis("Horizontal");

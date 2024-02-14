@@ -68,12 +68,10 @@ public class EnemyAI : MonoBehaviour
     void moveTowardsTarget()
     {
         float distanceToTarget = Vector3.Distance(transform.position, closestTarget.position);
-
         
-        
-        
-            float effectivespeed = Mathf.Min(speed, distanceToTarget / 2f);
-            transform.position = Vector3.MoveTowards(transform.position, closestTarget.position, effectivespeed * Time.deltaTime);
+        ///attacking
+        float effectivespeed = Mathf.Min(speed, distanceToTarget / 2f);
+        transform.position = Vector3.MoveTowards(transform.position, closestTarget.position, effectivespeed * Time.deltaTime);
         
 
         Vector3 directionToTarget = (target.position - transform.position).normalized;
@@ -82,13 +80,7 @@ public class EnemyAI : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if(other.collider.CompareTag("Player"))
-        {
-            SceneManager.LoadScene("BattleScene");
-        }
-    }
+    
 
     void OnDrawGizmosSelected()
     {

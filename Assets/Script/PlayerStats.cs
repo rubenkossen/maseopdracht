@@ -7,15 +7,12 @@ using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int hp;
-    public int strength;
-    public int defence;
-    public int speed;
-
-    public TMP_Text HPText;
+    [SerializeField] private int hp;
+    
+    //public TMP_Text HPText;
     void Update()
     {
-        HPText.text = hp.ToString();
+        //HPText.text = hp.ToString();
     }
 
     public void TakeDamage(int enemystrenght)

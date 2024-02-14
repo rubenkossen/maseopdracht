@@ -6,14 +6,8 @@ using UnityEngine;
 public class attackmove : MonoBehaviour
 {
     [SerializeField] private float timer;
-
-    public PlayerStats _playerStats;
-    public EnemyStats _enemyStats;
-    void Start()
-    {
-        _playerStats = GetComponentInParent<PlayerStats>();
-        _enemyStats = GetComponentInParent<EnemyStats>();
-    }
+    [SerializeField] private int damage;
+    
     
     void Update()
     {
@@ -21,7 +15,7 @@ public class attackmove : MonoBehaviour
 
         if (timer <= 0)
         {
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 
@@ -31,21 +25,17 @@ public class attackmove : MonoBehaviour
         {
             EnemyStats enemyplayerStats = other.collider.GetComponent<EnemyStats>();
             
-            if (enemyplayerStats != null && _playerStats != null)
-            {
-                enemyplayerStats.TakeDamage(_playerStats.strength);
-            }
+            
+            enemyplayerStats.TakeDamage(damage);
+            
             Destroy(gameObject);
         }
         if (other.collider.CompareTag("Player"))
         {
-            PlayerStats playerAttackStats = other.collider.GetComponent<PlayerStats>();
-            
-            if (_enemyStats != null && _playerStats != null)
-            {
-                playerAttackStats.TakeDamage(_enemyStats.EnemyStrength);
-            }
-            //Destroy(gameObject);
+            //PlayerStats playerAttackStats = other.collider.GetComponent<PlayerStats>();
+            //playerAttackStats.TakeDamage(damage);
+            Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 }
