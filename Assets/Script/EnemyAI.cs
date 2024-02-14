@@ -86,7 +86,6 @@ public class EnemyAI : MonoBehaviour
     {
         if(other.collider.CompareTag("Player"))
         {
-            Debug.Log(" dave");
             SceneManager.LoadScene("BattleScene");
         }
     }

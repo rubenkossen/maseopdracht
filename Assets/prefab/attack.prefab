@@ -119,7 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4781a74e3974525409764e8a21b817e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0.2
+  timer: 41.1
+  _playerStats: {fileID: 0}
+  _enemyStats: {fileID: 0}
 --- !u!54 &-6597976466293585612
 Rigidbody:
   m_ObjectHideFlags: 0

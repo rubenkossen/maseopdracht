@@ -10,7 +10,15 @@ public class OpenDoor : MonoBehaviour
    {
       if (other.gameObject.CompareTag("Player"))
       {
-         m_animator.SetTrigger("DoorOpen");
+         m_animator.SetBool("Door",true);
+      }
+   }
+
+   private void OnTriggerExit(Collider other)
+   {
+      if (other.gameObject.CompareTag("Player"))
+      {
+         m_animator.SetBool("Door",false);
       }
    }
 }

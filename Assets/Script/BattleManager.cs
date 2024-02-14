@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
@@ -10,26 +11,33 @@ public class BattleManager : MonoBehaviour
     public GameObject playerpos;
     private bool enemyTurn;
     
-    public GameObject nextTurn;
     public GameObject turnoffenemyturn;
     private bool attackinstantiated;
-    
+
+    public List<GameObject> Enemys;
+    private GameObject enemy;
+    public float range;
     public void Attack()
     {
         GameObject B = Instantiate(attackprefab, enemypos.transform.position, Quaternion.identity);
         B.transform.parent = transform;
-        nextTurn.SetActive(true);
         turnoffenemyturn.SetActive(false);
+        enemyTurn = true;
+    }
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void Update()
     {
-        /*if ()
+        enemyInRange();
+        if (enemy == null)
         {
-            enemyTurn = true;
-            nextTurn.SetActive(false);
-            turnoffenemyturn.SetActive(false);
-        }*/
+            SceneManager.LoadScene("map");
+        }
+        
         if (enemyTurn == true)
         {
             if (!attackinstantiated)
@@ -51,5 +59,30 @@ public class BattleManager : MonoBehaviour
         enemyTurn = false;
         turnoffenemyturn.SetActive(true);
         attackinstantiated = false;
+    }
+    void enemyInRange()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, range);
+
+        foreach (Collider collider in colliders)
+        {
+            if (collider.gameObject.tag == "Enemy" && collider.transform != transform)
+            {
+                if (!Enemys.Contains(collider.gameObject))
+                {
+                    Enemys.Add(collider.gameObject);
+                    enemy = Enemys[0];
+                }
+            }
+            else
+            {
+                Enemys.Clear();
+            }
+        }
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }

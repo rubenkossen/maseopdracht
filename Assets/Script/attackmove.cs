@@ -7,8 +7,8 @@ public class attackmove : MonoBehaviour
 {
     [SerializeField] private float timer;
 
-    private PlayerStats _playerStats;
-    private EnemyStats _enemyStats;
+    public PlayerStats _playerStats;
+    public EnemyStats _enemyStats;
     void Start()
     {
         _playerStats = GetComponentInParent<PlayerStats>();
@@ -21,7 +21,7 @@ public class attackmove : MonoBehaviour
 
         if (timer <= 0)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 
@@ -29,23 +29,23 @@ public class attackmove : MonoBehaviour
     {
         if (other.collider.CompareTag("Enemy"))
         {
-            EnemyStats enemyPlayerStats = other.collider.GetComponent<EnemyStats>();
+            EnemyStats enemyplayerStats = other.collider.GetComponent<EnemyStats>();
             
-            if (enemyPlayerStats != null && _playerStats != null)
+            if (enemyplayerStats != null && _playerStats != null)
             {
-                enemyPlayerStats.TakeDamage(_playerStats.strength);
+                enemyplayerStats.TakeDamage(_playerStats.strength);
             }
             Destroy(gameObject);
         }
         if (other.collider.CompareTag("Player"))
         {
-            EnemyStats enemyPlayerStats = other.collider.GetComponent<EnemyStats>();
+            PlayerStats playerAttackStats = other.collider.GetComponent<PlayerStats>();
             
-            if (enemyPlayerStats != null && _playerStats != null)
+            if (_enemyStats != null && _playerStats != null)
             {
-                _playerStats.TakeDamage(_enemyStats.EnemyStrength);
+                playerAttackStats.TakeDamage(_enemyStats.EnemyStrength);
             }
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }
