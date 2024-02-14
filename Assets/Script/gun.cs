@@ -2,19 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using TMPro;
+using UnityEngine.Serialization;
 
 public class gun : MonoBehaviour
 {
     [SerializeField] private GameObject attackPrefab;
     [SerializeField] private Transform shootpoint;
+    [SerializeField] private int Ammo;
+    public bool shot = true;
+
+    [SerializeField] private float Timer;
+    [SerializeField] private float resetTimer;
     
+    
+    [SerializeField] private TMP_Text AmmoText;
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        Timer -= Time.deltaTime;
+        AmmoText.text = Ammo.ToString();
+        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            shot = false;
+            StartCoroutine(reload());
+        }
+        else if (Input.GetMouseButton(0) && Ammo >= 0 && Timer <= 0)
         {
             shoot();
+            Ammo -= 1;
+            Timer = resetTimer;
+        }
+        else
+        {
+            
         }
     }
+
+    IEnumerator reload()
+    {
+        yield return new WaitForSeconds(2);
+        Ammo = 50;
+        shot = true;
+    }
+    
 
     void shoot()
     {

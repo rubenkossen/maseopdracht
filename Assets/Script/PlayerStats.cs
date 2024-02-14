@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
@@ -9,14 +10,22 @@ public class PlayerStats : MonoBehaviour
 {
     [SerializeField] private int hp;
     
-    //public TMP_Text HPText;
+    [SerializeField] private TMP_Text HPText;
+
+    private void Start()
+    {
+        HPText.text = hp.ToString();
+    }
+
     void Update()
     {
-        //HPText.text = hp.ToString();
+       
+        
     }
 
     public void TakeDamage(int enemystrenght)
     {
+        HPText.text = hp.ToString();
         hp -= enemystrenght;
 
         if (hp <= 0)
