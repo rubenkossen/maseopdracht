@@ -69,7 +69,7 @@ public class EnemyAI : MonoBehaviour
     {
         float distanceToTarget = Vector3.Distance(transform.position, closestTarget.position);
         
-        ///attacking
+        attacking();
         float effectivespeed = Mathf.Min(speed, distanceToTarget / 2f);
         transform.position = Vector3.MoveTowards(transform.position, closestTarget.position, effectivespeed * Time.deltaTime);
         
@@ -80,8 +80,11 @@ public class EnemyAI : MonoBehaviour
 
     }
 
-    
 
+    void attacking()
+    {
+        
+    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

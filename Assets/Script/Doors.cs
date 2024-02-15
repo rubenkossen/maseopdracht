@@ -13,7 +13,7 @@ public class Doors : MonoBehaviour
         {
             for (int i = 0; i < Gates.Count; i++)
             {
-                StartCoroutine(animationcoroutine());
+                //StartCoroutine(animationcoroutine());
                 bool result = Random.Range(1, 3) == 2;     
                 Gates[i].SetActive(result);
             }
@@ -24,6 +24,6 @@ public class Doors : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         ///make animation work with this
-        m_animator.SetTrigger("DoorOpen");
+        //m_animator.SetTrigger("DoorOpen");
     }
 }
