@@ -7,6 +7,6 @@ public class UIButtons : MonoBehaviour
 {
     public void startButton()
     {
-        SceneManager.LoadScene("map");
+        SceneManager.LoadScene("Intro");
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,17 @@ public class Movement : MonoBehaviour
     
     Vector3 velocity;
     
+    [SerializeField] private AudioClip soundClip;
+    private AudioSource _audioSource;
+
+
+    private void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
+
+        _audioSource.clip = soundClip;
+    }
+
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
@@ -22,5 +34,13 @@ public class Movement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S))
+        {
+            _audioSource.Play();
+        }
+        else
+        {
+            _audioSource.Stop();
+        }
     }
 }

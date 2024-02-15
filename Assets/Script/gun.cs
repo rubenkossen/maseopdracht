@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,9 +15,19 @@ public class gun : MonoBehaviour
 
     [SerializeField] private float Timer;
     [SerializeField] private float resetTimer;
-    
+
+    [SerializeField] private AudioClip soundClip;
+    private AudioSource _audioSource;
     
     [SerializeField] private TMP_Text AmmoText;
+
+    private void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
+
+        _audioSource.clip = soundClip;
+    }
+
     void Update()
     {
         Timer -= Time.deltaTime;
@@ -29,6 +40,7 @@ public class gun : MonoBehaviour
         }
         else if (Input.GetMouseButton(0) && Ammo >= 0 && Timer <= 0)
         {
+            _audioSource.Play();
             shoot();
             Ammo -= 1;
             Timer = resetTimer;
