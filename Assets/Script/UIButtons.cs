@@ -9,4 +9,9 @@ public class UIButtons : MonoBehaviour
     {
         SceneManager.LoadScene("Intro");
     }
+
+    public void QUITButton()
+    {
+        Application.Quit();
+    }
 }

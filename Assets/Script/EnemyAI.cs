@@ -68,12 +68,17 @@ public class EnemyAI : MonoBehaviour
     void moveTowardsTarget()
     {
         float distanceToTarget = Vector3.Distance(transform.position, closestTarget.position);
-        
-        attacking();
-        float effectivespeed = Mathf.Min(speed, distanceToTarget / 2f);
-        transform.position = Vector3.MoveTowards(transform.position, closestTarget.position, effectivespeed * Time.deltaTime);
-        
 
+        if (Vector3.Distance(transform.position, closestTarget.position) < offset)
+        {
+            attacking();
+        }
+        else
+        {
+            float effectivespeed = Mathf.Min(speed, distanceToTarget / 2f);
+            transform.position = Vector3.MoveTowards(transform.position, closestTarget.position, effectivespeed * Time.deltaTime);
+        }
+        
         Vector3 directionToTarget = (target.position - transform.position).normalized;
         Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotationToTarget, rotationSpeed * Time.deltaTime);

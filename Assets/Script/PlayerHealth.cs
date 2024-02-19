@@ -6,21 +6,30 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int hp;
     
     [SerializeField] private TMP_Text HPText;
 
+    [SerializeField] private Slider sliderUI;
+    [SerializeField] private Image HealthFill;
+    
+
     private void Start()
     {
+        sliderUI.maxValue = hp;
         HPText.text = hp.ToString();
     }
 
     void Update()
     {
-       
-        
+        sliderUI.value = hp;
+        if (hp <= 0)
+        {
+            sliderUI.gameObject.SetActive(false);
+            Die();
+        }
     }
 
     public void TakeDamage(int enemystrenght)
