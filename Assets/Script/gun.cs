@@ -51,6 +51,7 @@ public class gun : MonoBehaviour
         }
         else if (Ammo == 0 && MaxMags >= 1)
         {
+            m_amotor.SetBool(" shooting", false);
             m_amotor.SetBool("bool", true);
             StartCoroutine(reload());
         }

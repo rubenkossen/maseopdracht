@@ -32,8 +32,8 @@ public class attackmove : MonoBehaviour
         }
         if (other.collider.CompareTag("Player"))
         {
-            //PlayerStats playerAttackStats = other.collider.GetComponent<PlayerStats>();
-            //playerAttackStats.TakeDamage(damage);
+            PlayerHealth playerAttackStats = other.collider.GetComponent<PlayerHealth>();
+            playerAttackStats.TakeDamage(damage);
             Destroy(gameObject);
         }
         Destroy(gameObject);

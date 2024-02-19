@@ -20,11 +20,13 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField] private GameObject AttackPrefab;
 
+    public Transform shootpoint;
     private Transform target;
     private Transform closestTarget;
 
     void Update()
     {
+        Timer -= Time.deltaTime;
         enemyInRange();
     }
 
@@ -88,6 +90,14 @@ public class EnemyAI : MonoBehaviour
 
     void attacking()
     {
+        if (Timer <= 0)
+        {
+            Vector3 SpawnPos = transform.position + 2 * transform.forward;
+            GameObject b = Instantiate(AttackPrefab, shootpoint.position, Quaternion.identity);
+            b.transform.rotation = transform.rotation;
+            Timer = resetTimer;
+        }
+        
         
     }
     void OnDrawGizmosSelected()
