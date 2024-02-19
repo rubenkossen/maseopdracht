@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 158158049}
   - component: {fileID: 158158048}
   - component: {fileID: 158158047}
+  - component: {fileID: 158158050}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -257,6 +258,37 @@ RectTransform:
   m_AnchoredPosition: {x: -25.2944, y: -150.2012}
   m_SizeDelta: {x: 1769.4175, y: 707.4073}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &158158050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158158046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5971441119e29f4d811e73e43c550ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 158158047}
+  Lines:
+  - "Sure thing!  In the midst of a bustling city, where skyscrapers kissed the clouds
+    and cars hummed like bees, there existed a quaint little caf\xE9 tucked away
+    in a quiet corner. Its walls adorned with vintage posters and the aroma of freshly
+    brewed coffee lingering in the air, it was a haven for weary souls seeking solace.
+    Every morning, the old wooden door creaked open, welcoming a diverse array of
+    patrons - writers seeking inspiration, lovers lost in whispered conversations,
+    and businessmen buried under the weight of their responsibilities. Within those
+    walls, time seemed to slow down, as if the world outside ceased to exist."
+  - In the heart of a lush forest, where sunlight filtered through the canopy, there
+    stood a majestic oak tree, its branches reaching towards the heavens like outstretched
+    arms. Beneath its shade, a family of deer grazed peacefully, while birds sang
+    melodies that danced upon the breeze. Nearby, a babbling brook meandered through
+    the underbrush, its crystal-clear waters inviting weary travelers to quench their
+    thirst. Amidst this natural splendor, the air was filled with a sense of tranquility,
+    as if the very essence of the forest whispered tales of ancient wisdom to those
+    who listened with an open heart.
+  textSpeed: 0
 --- !u!1 &429013793
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,32 +441,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 558406894}
-  - component: {fileID: 558406893}
   - component: {fileID: 558406895}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: textWriter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &558406893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558406892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5971441119e29f4d811e73e43c550ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textComponent: {fileID: 158158047}
-  Lines:
-  - dwadad
-  - awdawdwaryeyrehtth
-  textSpeed: 54
 --- !u!4 &558406894
 Transform:
   m_ObjectHideFlags: 0
@@ -572,6 +586,7 @@ RectTransform:
   - {fileID: 666703814}
   - {fileID: 429013794}
   - {fileID: 158158049}
+  - {fileID: 1881884758}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -903,6 +918,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1881884757
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1881884758}
+  - component: {fileID: 1881884759}
+  m_Layer: 5
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1881884758
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881884757}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 702317360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1881884759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881884757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ebde11e7e61724cb80aeb7d0ee133c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
