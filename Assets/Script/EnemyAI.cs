@@ -24,6 +24,9 @@ public class EnemyAI : MonoBehaviour
     private Transform target;
     private Transform closestTarget;
 
+    [SerializeField] private Animator _animator;
+    
+
     void Update()
     {
         Timer -= Time.deltaTime;
@@ -77,6 +80,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
+            _animator.SetBool("Run", true);
             float effectivespeed = Mathf.Min(speed, distanceToTarget / 2f);
             transform.position = Vector3.MoveTowards(transform.position, closestTarget.position, effectivespeed * Time.deltaTime);
         }
@@ -92,10 +96,14 @@ public class EnemyAI : MonoBehaviour
     {
         if (Timer <= 0)
         {
-            Vector3 SpawnPos = transform.position + 2 * transform.forward;
+            _animator.SetBool("Shot", true);
             GameObject b = Instantiate(AttackPrefab, shootpoint.position, Quaternion.identity);
             b.transform.rotation = transform.rotation;
             Timer = resetTimer;
+        }
+        else
+        {
+            _animator.SetBool("Aim", true);
         }
         
         

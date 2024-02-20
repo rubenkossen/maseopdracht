@@ -51,7 +51,8 @@ public class gun : MonoBehaviour
         }
         else if (Ammo == 0 && MaxMags >= 1)
         {
-            m_amotor.SetBool(" shooting", false);
+            shot = false;
+            m_amotor.SetBool("shooting", false);
             m_amotor.SetBool("bool", true);
             StartCoroutine(reload());
         }
@@ -72,9 +73,6 @@ public class gun : MonoBehaviour
 
     IEnumerator reload()
     {
-        yield return new WaitForSeconds(2);
-
-        
         AmmoOff -= Ammo;
         if (MaxMags >= 1 && MaxMags <= 49)
         {
@@ -90,6 +88,8 @@ public class gun : MonoBehaviour
         AmmoOff = Ammo;
         m_amotor.SetBool("bool", false);
         shot = true;
+        yield return new WaitForSeconds(2);
+
     }
     
 
