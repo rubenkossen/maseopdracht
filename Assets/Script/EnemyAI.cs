@@ -84,11 +84,11 @@ public class EnemyAI : MonoBehaviour
             float effectivespeed = Mathf.Min(speed, distanceToTarget / 2f);
             transform.position = Vector3.MoveTowards(transform.position, closestTarget.position, effectivespeed * Time.deltaTime);
         }
-        
-        Vector3 directionToTarget = (target.position - transform.position).normalized;
+
+        Vector3 directionToTarget = (closestTarget.position - transform.position).normalized;
+        directionToTarget.y = 0; // Set the Y component to zero to prevent rotation in Y axis
         Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotationToTarget, rotationSpeed * Time.deltaTime);
-
     }
 
 
