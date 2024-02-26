@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 using TMPro;
+using Random = UnityEngine.Random;
 
 public class GameManeger : MonoBehaviour
 {
@@ -12,8 +14,10 @@ public class GameManeger : MonoBehaviour
     [SerializeField] private int depth;
 
     [SerializeField] private GameObject _playerPrefab;
-    [SerializeField] private GameObject _DoorPrefab;
 
+    [SerializeField] private float Range;
+    
+    
     private bool spawned = false;
 
     private MaseSeil[,] _mazeGrid;
@@ -82,10 +86,9 @@ public class GameManeger : MonoBehaviour
 
             UI.Menu = PlMenu;
             UI.IngameUI = PLIngameUI;
-            
-        
-            Instantiate(_DoorPrefab, _endCell.transform.position, Quaternion.identity);
 
+            
+            
             spawned = true;
         }
         
@@ -108,6 +111,31 @@ public class GameManeger : MonoBehaviour
                 GenerateMaze(currentCell, nextCell);
             }
         } while (nextCell != null);
+        
+        if (Vector3.Distance(currentCell.transform.position, _playerPrefab.transform.position) <= Range)
+        {
+        
+            StartCoroutine(RegenerateMazeAroundPlayer(currentCell));
+        }
+    }
+    private IEnumerator RegenerateMazeAroundPlayer(MaseSeil centerCell)
+    {
+        yield return new WaitForSeconds(2f);
+
+        int centerX = (int)centerCell.transform.position.x;
+        int centerZ = (int)centerCell.transform.position.z;
+
+        for (int x = centerX - 2; x <= centerX + 2; x++)
+        {
+            for (int z = centerZ - 2; z <= centerZ + 2; z++)
+            {
+                if (x >= 0 && x < width && z >= 0 && z < depth)
+                {
+                    MaseSeil cell = _mazeGrid[x, z];
+                    GenerateMaze(null, cell);
+                }
+            }
+        }
     }
 
     private MaseSeil GetNextUnvisitedCell(MaseSeil currentCell)
@@ -216,6 +244,11 @@ public class GameManeger : MonoBehaviour
     void Update()
     {
 
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, Range);
     }
 }
 

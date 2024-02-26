@@ -8,6 +8,9 @@ public class exit : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("mainmenu");
+        if (other.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("mainmenu");     
+        }
     }
 }
