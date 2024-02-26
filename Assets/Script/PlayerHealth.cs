@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] public Slider sliderUI;
     [SerializeField] public Image HealthFill;
 
-    [SerializeField] private GameObject DeathObject;
+    [SerializeField] public GameObject DeathObject;
     
     
         

@@ -31,6 +31,7 @@ public class GameManeger : MonoBehaviour
     [SerializeField] private TMP_Text PlayerAmmoLeft;
     [SerializeField] private GameObject PlMenu;
     [SerializeField] private GameObject PLIngameUI;
+    [SerializeField] private GameObject DTDeathScreen;
     
 
     void Start()
@@ -76,6 +77,7 @@ public class GameManeger : MonoBehaviour
             playerHealth.HPText = playerHPText;
             playerHealth.sliderUI = playerSliderUI;
             playerHealth.HealthFill = playerHealthFill;
+            playerHealth.DeathObject = DTDeathScreen;
             
             Gun GunAmmo = player.GetComponent<Gun>();
             
