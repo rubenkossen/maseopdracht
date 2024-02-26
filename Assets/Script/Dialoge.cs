@@ -73,7 +73,7 @@ public class Dialoge : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("map");
+            SceneManager.LoadScene("AutoMase");
         }
     }
 

@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 09215987d9dbd574e98cae5031942443
   - enabled: 1
-    path: Assets/Scenes/map.unity
-    guid: 7540fd3dbd7ce7d4ba753b30ecaf065b
-  - enabled: 1
     path: Assets/Scenes/DeathScene.unity
     guid: 3e51a94a8bc13ff44adb4daf7b4cc4ef
+  - enabled: 1
+    path: Assets/Scenes/AutoMase.unity
+    guid: f945852ad45987f49b79fe6911c6999b
   m_configObjects: {}

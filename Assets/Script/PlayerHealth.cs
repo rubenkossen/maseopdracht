@@ -11,10 +11,10 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int hp;
     
-    [SerializeField] private TMP_Text HPText;
+    [SerializeField] public TMP_Text HPText;
 
-    [SerializeField] private Slider sliderUI;
-    [SerializeField] private Image HealthFill;
+    [SerializeField] public Slider sliderUI;
+    [SerializeField] public Image HealthFill;
     
 
     private void Start()

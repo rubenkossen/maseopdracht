@@ -9,14 +9,10 @@ public class camera : MonoBehaviour
     [SerializeField] private Transform playerbody;
     
     float xRotation = 0f;
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
     
     void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 

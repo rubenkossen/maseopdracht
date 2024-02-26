@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UIButtons : MonoBehaviour
 {
+    
     public void startButton()
     {
         SceneManager.LoadScene("Intro");
@@ -14,4 +15,10 @@ public class UIButtons : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ToMainMenu()
+    {
+        SceneManager.LoadScene("mainmenu");
+    }
+    
 }
