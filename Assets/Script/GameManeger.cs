@@ -111,31 +111,6 @@ public class GameManeger : MonoBehaviour
                 GenerateMaze(currentCell, nextCell);
             }
         } while (nextCell != null);
-        
-        if (Vector3.Distance(currentCell.transform.position, _playerPrefab.transform.position) <= Range)
-        {
-        
-            StartCoroutine(RegenerateMazeAroundPlayer(currentCell));
-        }
-    }
-    private IEnumerator RegenerateMazeAroundPlayer(MaseSeil centerCell)
-    {
-        yield return new WaitForSeconds(2f);
-
-        int centerX = (int)centerCell.transform.position.x;
-        int centerZ = (int)centerCell.transform.position.z;
-
-        for (int x = centerX - 2; x <= centerX + 2; x++)
-        {
-            for (int z = centerZ - 2; z <= centerZ + 2; z++)
-            {
-                if (x >= 0 && x < width && z >= 0 && z < depth)
-                {
-                    MaseSeil cell = _mazeGrid[x, z];
-                    GenerateMaze(null, cell);
-                }
-            }
-        }
     }
 
     private MaseSeil GetNextUnvisitedCell(MaseSeil currentCell)
@@ -251,4 +226,3 @@ public class GameManeger : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, Range);
     }
 }
-
