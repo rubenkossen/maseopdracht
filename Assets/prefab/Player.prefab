@@ -253,10 +253,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ba0d133d70fcf4bb5b6dfbacaa7dd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10000000
+  hp: 1
   HPText: {fileID: 0}
   sliderUI: {fileID: 0}
   HealthFill: {fileID: 0}
+  DeathObject: {fileID: 0}
+  Timer: 2
 --- !u!114 &6227220859154915001
 MonoBehaviour:
   m_ObjectHideFlags: 0

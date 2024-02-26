@@ -15,8 +15,11 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] public Slider sliderUI;
     [SerializeField] public Image HealthFill;
-    
 
+    [SerializeField] private GameObject DeathObject;
+    
+    
+        
     private void Start()
     {
         sliderUI.maxValue = hp;
@@ -40,12 +43,12 @@ public class PlayerHealth : MonoBehaviour
 
         if (hp <= 0)
         {
-           Die(); 
+           Die();
         }
     }
 
     void Die()
     {
-        SceneManager.LoadScene("DeathScene");
+        DeathObject.SetActive(true);
     }
 }
