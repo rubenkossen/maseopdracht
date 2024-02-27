@@ -12,16 +12,9 @@ public class GoFurther : MonoBehaviour
     
     public Gun gundiss;
     public MenuUI UIBool;
-
-    private void Start()
-    {
-        UIBool = Player.GetComponent<MenuUI>();
-        gundiss = Player.GetComponent<Gun>();
-    }
-
+    
     public void goFurther()
     {
-        Debug.Log(UIBool.MenuBool && gundiss.enabled);
         UIBool.MenuBool = true;
         gundiss.enabled = true;
         

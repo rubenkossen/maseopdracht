@@ -74,6 +74,9 @@ public class GameManeger : MonoBehaviour
             GameObject player = Instantiate(_playerPrefab, _startCell.transform.position, Quaternion.identity);
 
             player.transform.parent = gameObject.transform;
+            player.name = _playerPrefab.name;
+            
+            
             PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
             
             playerHealth.HPText = playerHPText;

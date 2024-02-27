@@ -583,95 +583,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040770054}
   m_CullTransparentMesh: 1
---- !u!1001 &1075329862
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 598382195925776411, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 598382195925776411, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 605321747637630847, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1424.7214
-      objectReference: {fileID: 0}
-    - target: {fileID: 605321747637630847, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 605321747637630847, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 265.81958
-      objectReference: {fileID: 0}
-    - target: {fileID: 605321747637630847, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 605321747637630847, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 605321747637630847, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 605321747637630847, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 605321747637630847, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 605321747637630847, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 605321747637630847, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4239766116606990089, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: HPText
-      value: 
-      objectReference: {fileID: 794973885}
-    - target: {fileID: 4239766116606990089, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: sliderUI
-      value: 
-      objectReference: {fileID: 1845367974}
-    - target: {fileID: 4239766116606990089, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: HealthFill
-      value: 
-      objectReference: {fileID: 432933517}
-    - target: {fileID: 4239766116606990089, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: DeathObject
-      value: 
-      objectReference: {fileID: 2000129218}
-    - target: {fileID: 6227220859154915001, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: AmmoText
-      value: 
-      objectReference: {fileID: 101462187}
-    - target: {fileID: 6227220859154915001, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: Ammoleft
-      value: 
-      objectReference: {fileID: 1688697988}
-    - target: {fileID: 6577785610308525060, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: m_Volume
-      value: 0.3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
 --- !u!1 &1164134364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,8 +1415,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8488960983689200457}
-        m_TargetAssemblyTypeName: GoFurther, Assembly-CSharp
+      - m_Target: {fileID: 4038172975894800709, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
+        m_TargetAssemblyTypeName: MenuUI, Assembly-CSharp
         m_MethodName: goFurther
         m_Mode: 1
         m_Arguments:
@@ -1515,7 +1426,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!222 &3160376261082573940
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1914,7 +1825,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395969882745053414}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32720479ffab72b4cb2dfab10a814cd4, type: 3}
   m_Name: 
@@ -1988,5 +1899,4 @@ SceneRoots:
   - {fileID: 2737894158231553256}
   - {fileID: 395793246}
   - {fileID: 707410821}
-  - {fileID: 1075329862}
   - {fileID: 2315064384611293392}

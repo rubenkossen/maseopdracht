@@ -46,4 +46,29 @@ public class MenuUI : MonoBehaviour
             }       
         }
     }
+    
+    
+    public void goFurther()
+    {
+       
+        Time.timeScale = 1;
+        if (Time.timeScale != 0)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            StartCoroutine(courotine());
+        }
+
+
+    }
+
+    private IEnumerator courotine()
+    {
+        MenuBool = true;
+        gundiss.enabled = true;
+        
+        Menu.SetActive(false);
+        IngameUI.SetActive(true);
+
+        yield return new WaitForSeconds(0.1f);
+    }
 }
