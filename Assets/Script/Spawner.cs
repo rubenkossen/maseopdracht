@@ -6,21 +6,16 @@ public class Spawner : MonoBehaviour
 {
     void Start()
     {
-        int RandomNumber = Random.Range(1, 5);
+        int RandomNumber = Random.Range(1, 7);
 
         switch (RandomNumber)
         {
             case 1:
+                break;
+            default:
                 Destroy(gameObject);
                 break;
-            case 2:
-                break;
-            case 3:
-                Destroy(gameObject);
-                break;
-            case 4:
-                Destroy(gameObject);
-                break;
+                
         }
     }
 }

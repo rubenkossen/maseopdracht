@@ -45,7 +45,7 @@ public class GameManeger : MonoBehaviour
         while (true)
         {
             GenerateMaze();
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(15f);
         }
     }
 
@@ -59,6 +59,7 @@ public class GameManeger : MonoBehaviour
             for (int z = 0; z < depth; z++)
             {
                 _mazeGrid[x, z] = Instantiate(_maseSeilPrefab, new Vector3(x, 0, z), Quaternion.identity);
+                
             }
         }
 
@@ -71,7 +72,8 @@ public class GameManeger : MonoBehaviour
         if (spawned == false)
         {
             GameObject player = Instantiate(_playerPrefab, _startCell.transform.position, Quaternion.identity);
-            
+
+            player.transform.parent = gameObject.transform;
             PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
             
             playerHealth.HPText = playerHPText;

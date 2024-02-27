@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int hp;
+    [SerializeField] private int Maxhp;
     
     [SerializeField] public TMP_Text HPText;
 
@@ -22,17 +23,24 @@ public class PlayerHealth : MonoBehaviour
         
     private void Start()
     {
+        hp = Maxhp;
         sliderUI.maxValue = hp;
         HPText.text = hp.ToString();
     }
 
     void Update()
     {
+        HPText.text = hp.ToString();
         sliderUI.value = hp;
         if (hp <= 0)
         {
             sliderUI.gameObject.SetActive(false);
             Die();
+        }
+
+        if (hp >= Maxhp)
+        {
+            hp = Maxhp;
         }
     }
 
@@ -50,5 +58,10 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         DeathObject.SetActive(true);
+    }
+
+    public void Healing(int healing)
+    {
+        hp += healing;
     }
 }

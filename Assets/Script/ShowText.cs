@@ -7,6 +7,8 @@ public class ShowText : MonoBehaviour
 {
     [SerializeField] private GameObject StartText;
     [SerializeField] private float Timer;
+    [SerializeField] private GameObject image;
+    
     
     void Start()
     {
@@ -21,6 +23,8 @@ public class ShowText : MonoBehaviour
         if (Timer <= 0)
         {
             StartText.SetActive(true);
+            image.SetActive(true);
+            
         }
     }
 }

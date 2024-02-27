@@ -10,7 +10,7 @@ public class exit : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("mainmenu");     
+            SceneManager.LoadScene("escape");     
         }
     }
 }

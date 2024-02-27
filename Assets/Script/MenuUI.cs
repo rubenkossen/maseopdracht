@@ -10,7 +10,6 @@ public class MenuUI : MonoBehaviour
 
     private Gun gundiss;
     
-
     public bool MenuBool = true;
 
     private void Start()
@@ -33,14 +32,14 @@ public class MenuUI : MonoBehaviour
                 gundiss.enabled = false;
 
             }
-            else if (MenuBool == false)
+            else
             {
-                gundiss.enabled = true;
                 Time.timeScale = 1;
                 if (Time.timeScale != 0)
                 {
                     Cursor.lockState = CursorLockMode.Locked;
                 }
+                gundiss.enabled = true;
                 Menu.SetActive(false);
                 IngameUI.SetActive(true);
                 MenuBool = true;

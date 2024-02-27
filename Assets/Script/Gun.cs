@@ -19,21 +19,19 @@ public class Gun : MonoBehaviour
     [SerializeField] private float Timer;
     [SerializeField] private float resetTimer;
 
-    [SerializeField] private AudioClip soundClip;
-    private AudioSource _audioSource;
+
+    [SerializeField] private AudioSource _audioSource;
     
     [SerializeField] public TMP_Text AmmoText;
     [SerializeField] public TMP_Text Ammoleft;
 
     [SerializeField] private Animator m_amotor;
     
+    
 
     private void Start()
     {
         AmmoOff = Ammo;
-        _audioSource = GetComponent<AudioSource>();
-
-        _audioSource.clip = soundClip;
     }
 
     void Update()
@@ -59,8 +57,8 @@ public class Gun : MonoBehaviour
         if (Input.GetMouseButton(0) && Ammo >= 1 && Timer <= 0 && shot == true)
         {
             m_amotor.SetBool("shooting", true);
-            _audioSource.Play();
             shoot();
+            _audioSource.Play();
             Ammo -= 1;
             Timer = resetTimer;
         }
@@ -96,7 +94,11 @@ public class Gun : MonoBehaviour
 
     void shoot()
     {
+        _audioSource.Play();
         GameObject bullet = Instantiate(attackPrefab, shootpoint.position, Quaternion.identity);
+        bullet.transform.parent = gameObject.transform;
+        
         bullet.transform.rotation = transform.rotation;
+        
     }
 }

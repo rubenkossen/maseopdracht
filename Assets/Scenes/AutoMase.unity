@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 60b57cc1ee6f8bf46873616f8769ba13, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -169,8 +169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maseSeilPrefab: {fileID: 4824169032075667969, guid: 8952c29b67f7c3841bb3384bfca07351, type: 3}
-  width: 10
-  depth: 10
+  width: 15
+  depth: 15
   _playerPrefab: {fileID: 598382195925776411, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
   Range: 60.12
   playerHPText: {fileID: 794973885}
@@ -180,7 +180,7 @@ MonoBehaviour:
   PlayerAmmoLeft: {fileID: 1688697988}
   PlMenu: {fileID: 1314034756}
   PLIngameUI: {fileID: 1940205474}
-  DTDeathScreen: {fileID: 0}
+  DTDeathScreen: {fileID: 2000129218}
 --- !u!4 &395793246
 Transform:
   m_ObjectHideFlags: 0
@@ -640,10 +640,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4239766116606990089, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-      propertyPath: Timer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4239766116606990089, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
       propertyPath: HPText
       value: 
       objectReference: {fileID: 794973885}
@@ -667,6 +663,10 @@ PrefabInstance:
       propertyPath: Ammoleft
       value: 
       objectReference: {fileID: 1688697988}
+    - target: {fileID: 6577785610308525060, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1025,7 +1025,7 @@ GameObject:
   - component: {fileID: 3160376261082573940}
   - component: {fileID: 8488960983689200456}
   - component: {fileID: 2873059120097207873}
-  - component: {fileID: 2907993469824936105}
+  - component: {fileID: 8488960983689200457}
   m_Layer: 5
   m_Name: start
   m_TagString: Untagged
@@ -1309,7 +1309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2803139052006081130, guid: 5fb25cbc9b86be740b6107105cda189d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.012
+      value: 14.028
       objectReference: {fileID: 0}
     - target: {fileID: 2803139052006081130, guid: 5fb25cbc9b86be740b6107105cda189d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1317,7 +1317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2803139052006081130, guid: 5fb25cbc9b86be740b6107105cda189d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.471
+      value: 14.446
       objectReference: {fileID: 0}
     - target: {fileID: 2803139052006081130, guid: 5fb25cbc9b86be740b6107105cda189d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1444,6 +1444,10 @@ PrefabInstance:
       value: alhpa block
       objectReference: {fileID: 0}
     - target: {fileID: 8438686332408349181, guid: 8952c29b67f7c3841bb3384bfca07351, type: 3}
+      propertyPath: range
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438686332408349181, guid: 8952c29b67f7c3841bb3384bfca07351, type: 3}
       propertyPath: offset
       value: 0.93
       objectReference: {fileID: 0}
@@ -1500,8 +1504,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7284117298807495600, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
-        m_TargetAssemblyTypeName: MenuUI, Assembly-CSharp
+      - m_Target: {fileID: 8488960983689200457}
+        m_TargetAssemblyTypeName: GoFurther, Assembly-CSharp
         m_MethodName: goFurther
         m_Mode: 1
         m_Arguments:
@@ -1512,21 +1516,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2907993469824936105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395969882745053414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b200f4ae72887c49a116e4794a6b1fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Menu: {fileID: 0}
-  IngameUI: {fileID: 0}
-  gundiss: {fileID: 0}
 --- !u!222 &3160376261082573940
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1785,9 +1774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b200f4ae72887c49a116e4794a6b1fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Menu: {fileID: 0}
-  IngameUI: {fileID: 0}
-  gundiss: {fileID: 0}
 --- !u!222 &6970241921869335980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1921,6 +1907,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8488960983689200457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395969882745053414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32720479ffab72b4cb2dfab10a814cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Menu: {fileID: 1314034756}
+  IngameUI: {fileID: 1940205474}
+  Player: {fileID: 598382195925776411, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
+  gundiss: {fileID: 6227220859154915001, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
+  UIBool: {fileID: 4038172975894800709, guid: 4bfef3cc67ffd4c4b9b5d4dd849255dd, type: 3}
 --- !u!114 &8876847695333087106
 MonoBehaviour:
   m_ObjectHideFlags: 0
