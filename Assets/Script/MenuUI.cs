@@ -8,13 +8,12 @@ public class MenuUI : MonoBehaviour
     [SerializeField] public GameObject Menu;
     [SerializeField] public GameObject IngameUI;
 
-    private Gun gundiss;
+    public Gun gundiss;
     
     public bool MenuBool = true;
 
     private void Start()
     {
-        gundiss = GetComponent<Gun>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
