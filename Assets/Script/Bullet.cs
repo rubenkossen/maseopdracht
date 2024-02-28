@@ -17,11 +17,6 @@ public class Bullet : MonoBehaviour
         timer -= Time.deltaTime;
 
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        
-        if (timer <= 0)
-        {
-            Destroy(this.gameObject);
-        }
     }
 
     private void OnCollisionEnter(Collision other)

@@ -37,7 +37,6 @@ public class GameManeger : MonoBehaviour
     void Start()
     {
         StartCoroutine(RegenerateMazeRoutine());
-       
     }
 
     IEnumerator RegenerateMazeRoutine()
@@ -88,12 +87,6 @@ public class GameManeger : MonoBehaviour
             
             GunAmmo.AmmoText = PlayerAmmoText;
             GunAmmo.Ammoleft = PlayerAmmoLeft;
-
-            MenuUI UI = player.GetComponent<MenuUI>();
-
-            UI.Menu = PlMenu;
-            UI.IngameUI = PLIngameUI;
-
             
             
             spawned = true;

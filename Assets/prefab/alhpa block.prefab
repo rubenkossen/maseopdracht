@@ -558,9 +558,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4617468771652302428, guid: 3bf9d7038b1cb794aafe765e98ae3aca, type: 3}
+      propertyPath: m_Size.x
+      value: 1.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 4617468771652302428, guid: 3bf9d7038b1cb794aafe765e98ae3aca, type: 3}
+      propertyPath: m_Size.y
+      value: 2.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4617468771652302428, guid: 3bf9d7038b1cb794aafe765e98ae3aca, type: 3}
+      propertyPath: m_Size.z
+      value: 1.52
+      objectReference: {fileID: 0}
     - target: {fileID: 5531205236302534113, guid: 3bf9d7038b1cb794aafe765e98ae3aca, type: 3}
       propertyPath: range
-      value: 2.4
+      value: 1.55
       objectReference: {fileID: 0}
     - target: {fileID: 5531205236302534113, guid: 3bf9d7038b1cb794aafe765e98ae3aca, type: 3}
       propertyPath: speed
@@ -568,7 +580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5531205236302534113, guid: 3bf9d7038b1cb794aafe765e98ae3aca, type: 3}
       propertyPath: offset
-      value: 0.5
+      value: 0.93
       objectReference: {fileID: 0}
     - target: {fileID: 5531205236302534113, guid: 3bf9d7038b1cb794aafe765e98ae3aca, type: 3}
       propertyPath: resetTimer
